@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jupyter_modularize"
+authors = [
+    {name = "Justin Donaldson", email = "jdonaldson@gmail.com"},
+]
+description = "A Jupyter extension to execute and export cells as modules"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {file = "LICENSE"}
+classifiers = [
+    "Framework :: Jupyter",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "ipython>=7.0.0",
+    "notebook>=6.0.0",
+]
+dynamic = ["version"]
+
+[project.urls]
+"Homepage" = "https://github.com/jdonaldson/jupyter_modularize"
+"Bug Tracker" = "https://github.com/jdonaldson/jupyter_modularize/issues"
+
+[tool.setuptools_scm]
+write_to = "jupyter_modularize/_version.py"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["jupyter_modularize*"]
