@@ -28,8 +28,8 @@ dynamic = ["version"]
 "Bug Tracker" = "https://github.com/jdonaldson/jupyter_modularize/issues"
 
 [tool.setuptools_scm]
-write_to = "jupyter_modularize/_version.py"
+write_to = "src/jupyter_modularize/_version.py"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["jupyter_modularize*"]
+include = ["src"]
