@@ -1,8 +1,9 @@
-.PHONY: help setup install test clean build publish
+.PHONY: help setup dev install test clean build publish
 
 help:
 	@echo "Available commands:"
-	@echo "  make setup    - Set up the development environment"
+	@echo "  make setup    - Set up the basic development environment"
+	@echo "  make dev      - Set up the full development environment with all dev dependencies"
 	@echo "  make install  - Install the package in editable mode"
 	@echo "  make test     - Run the test suite"
 	@echo "  make clean    - Remove build artifacts"
@@ -11,7 +12,10 @@ help:
 
 setup:
 	python -m venv venv
-	. venv/bin/activate && pip install -r requirements.txt
+	. venv/bin/activate && pip install -e .
+
+dev: setup
+	. venv/bin/activate && pip install -e ".[dev]"
 
 install:
 	pip install -e .
