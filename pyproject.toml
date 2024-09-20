@@ -9,7 +9,7 @@ authors = [
 ]
 description = "A Jupyter extension to execute and export cells as modules"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.7"
 license = {file = "LICENSE"}
 classifiers = [
     "Framework :: Jupyter",
@@ -23,13 +23,22 @@ dependencies = [
 ]
 dynamic = ["version"]
 
+[project.optional-dependencies]
+dev = [
+    "jupyter",
+    "pandas",
+    "pytest",
+    "build",
+    "twine",
+]
+
 [project.urls]
 "Homepage" = "https://github.com/jdonaldson/jupyter_modularize"
 "Bug Tracker" = "https://github.com/jdonaldson/jupyter_modularize/issues"
 
 [tool.setuptools_scm]
-write_to = "src/jupyter_modularize/_version.py"
+write_to = "jupyter_modularize/_version.py"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["src"]
+include = ["jupyter_modularize*"]
