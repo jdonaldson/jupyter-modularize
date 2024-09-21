@@ -106,3 +106,4 @@ Thumbs.db
 # Jupyter Modularize specific
 # Add any project-specific files or directories here
 src/jupyter_modularize/_version.py
+.modularize
