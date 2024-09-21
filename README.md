@@ -47,6 +47,16 @@ pip install jupyter_modularize
    print(my_module.square(5))
    ```
 
+ 5. (Optional) If you'd like to automatically import the module after you declare it, use the appropriate magic:
+
+   ```python
+   %%modularize_import my_module
+
+   def hello(name):
+       return f"Hello, {name}!"
+
+   ```
+
 ## Requirements
 
 - Python 3.7+
