@@ -1,7 +1,6 @@
 [build-system]
 requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
-
 [project]
 name = "jupyter_modularize"
 authors = [
@@ -18,8 +17,8 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "ipython>=7.0.0",
-    "notebook>=6.0.0",
+    "ipython",
+    "notebook",
 ]
 dynamic = ["version"]
 
@@ -29,6 +28,7 @@ dev = [
     "pandas",
     "pytest",
     "build",
+    "sf-hamilton",
     "twine",
 ]
 
@@ -37,8 +37,7 @@ dev = [
 "Bug Tracker" = "https://github.com/jdonaldson/jupyter_modularize/issues"
 
 [tool.setuptools_scm]
-write_to = "jupyter_modularize/_version.py"
+write_to = "src/jupyter_modularize/_version.py"
 
 [tool.setuptools.packages.find]
-where = ["."]
-include = ["jupyter_modularize*"]
+where = ["src"]

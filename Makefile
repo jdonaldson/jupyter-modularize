@@ -14,7 +14,7 @@ setup:
 	python -m venv venv
 	. venv/bin/activate && pip install -e .
 
-dev: setup
+dev:
 	. venv/bin/activate && pip install -e ".[dev]"
 
 install:
